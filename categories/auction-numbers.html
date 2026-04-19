@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Аукцион номеров</title>
+  <meta name="description" content="Аукцион автомобильных номеров — выберите номер, посмотрите вставку и сделайте ставку.">
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="cars-page page-with-footer">
+  <header class="header">
+    <a href="../index.html" class="back-link">← Назад</a>
+    <div class="logo">Аукцион номеров</div>
+    <a class="add-btn" href="../add-listing.html">Подать объявление</a>
+  </header>
+
+  <div class="page-layout">
+    <aside class="sidebar-col left-col">
+      <div class="side-ad left-ad static-ad">
+        <a href="#"><img class="ad-img" src="https://i.pinimg.com/control1/1200x/68/96/10/68961057f65cbfce5c0f3a1fdbe3ced1.jpg" alt="Рекламный баннер" loading="lazy"></a>
+      </div>
+      <div class="side-ad left-ad static-ad">
+        <a href="#"><img class="ad-img" src="https://i.pinimg.com/control1/736x/52/52/a2/5252a2247f6f5c7a08a3731cd18ab153.jpg" alt="Рекламный баннер" loading="lazy"></a>
+      </div>
+    </aside>
+
+    <main class="main-wrapper">
+      <div class="auction-numbers-page">
+        <aside class="numbers-side-column" aria-label="Лоты слева">
+          <a class="number-card" href="#" data-preview="https://i.pinimg.com/originals/0e/92/2d/0e922d19d1b27c89d19ca278f8ca141c.jpg" data-bid="1500" data-title="Лот №1">
+            <img src="https://data.kaktus.media/image/big/2018-06-08_11-48-23_935208.jpg" alt="Лот №1" loading="lazy">
+          </a>
+          <a class="number-card" href="#" data-preview="https://i.pinimg.com/originals/0e/92/2d/0e922d19d1b27c89d19ca278f8ca141c.jpg" data-bid="2400" data-title="Лот №2">
+            <img src="https://gdb.rferl.org/2ddc9f5a-99e7-4270-95c2-9139da9112e4_cx0_cy0_cw99_w1080_h608_s.jpg" alt="Лот №2" loading="lazy">
+          </a>
+        </aside>
+
+        <main class="auction-center" aria-live="polite">
+          <h1 id="auction-title">Аукцион номеров</h1>
+          <div class="insert-preview">
+            <img id="auction-preview" src="https://i.pinimg.com/originals/0e/92/2d/0e922d19d1b27c89d19ca278f8ca141c.jpg" alt="Вставка номера" loading="lazy">
+          </div>
+          <div id="auction-rate" class="auction-rate">Ставка: 1 500 сом</div>
+
+          <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+            <input id="bid-input" type="number" min="0" placeholder="Ваша ставка" style="width:220px;padding:12px 14px;border-radius:14px;border:1px solid rgba(0,0,0,0.12)">
+            <button id="bid-btn" class="buy-now-btn" style="background:#c8102e">Сделать ставку</button>
+          </div>
+        </main>
+
+        <aside class="numbers-side-column" aria-label="Лоты справа">
+          <a class="number-card" href="#" data-preview="https://i.pinimg.com/originals/0e/92/2d/0e922d19d1b27c89d19ca278f8ca141c.jpg" data-bid="3300" data-title="Лот №3">
+            <img src="https://i.pinimg.com/564x/14/74/21/147421f9dfd5b69d08b0a48d60a9e57c.jpg" alt="Лот №3" loading="lazy">
+          </a>
+          <a class="number-card" href="#" data-preview="https://i.pinimg.com/originals/0e/92/2d/0e922d19d1b27c89d19ca278f8ca141c.jpg" data-bid="5200" data-title="Лот №4">
+            <img src="https://i.pinimg.com/564x/81/4b/7f/814b7f4a5c7b6f22f63f214d2d9f473f.jpg" alt="Лот №4" loading="lazy">
+          </a>
+        </aside>
+      </div>
+    </main>
+
+    <aside class="sidebar-col right-col">
+      <div class="side-ad right-ad static-ad">
+        <a href="#"><img class="ad-img" src="https://i.pinimg.com/control1/1200x/10/92/89/1092892e8f2a9807b5500a1766a3fc53.jpg" alt="Рекламный баннер" loading="lazy"></a>
+      </div>
+      <div class="side-ad right-ad static-ad">
+        <a href="#"><img class="ad-img" src="https://i.pinimg.com/736x/a4/53/f5/a453f5d85806a094d2e04edd25479bd3.jpg" alt="Рекламный баннер" loading="lazy"></a>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    © 2026 Авто Рынок — все права защищены. <a href="../index.html">На главную</a>
+  </footer>
+</body>
+
+<script>
+  (function () {
+    const cards = Array.from(document.querySelectorAll('.number-card[data-preview]'));
+    const preview = document.getElementById('auction-preview');
+    const rate = document.getElementById('auction-rate');
+    const title = document.getElementById('auction-title');
+    const bidInput = document.getElementById('bid-input');
+    const bidBtn = document.getElementById('bid-btn');
+
+    if (!cards.length || !preview || !rate || !title || !bidInput || !bidBtn) return;
+
+    let activeCard = cards[0];
+    let currentBid = Number(activeCard.dataset.bid || 0);
+
+    function setActive(card) {
+      activeCard = card;
+      currentBid = Number(card.dataset.bid || 0);
+      preview.src = card.dataset.preview;
+      title.textContent = card.dataset.title || 'Аукцион номеров';
+      rate.textContent = 'Ставка: ' + currentBid.toLocaleString('ru-RU') + ' сом';
+      bidInput.value = '';
+
+      cards.forEach((c) => c.classList.remove('is-active'));
+      card.classList.add('is-active');
+    }
+
+    cards.forEach((card) => {
+      card.addEventListener('click', function (e) {
+        e.preventDefault();
+        setActive(card);
+      });
+    });
+
+    bidBtn.addEventListener('click', function () {
+      const val = Number(bidInput.value);
+      if (!Number.isFinite(val) || val <= 0) {
+        alert('Введите сумму ставки');
+        return;
+      }
+      if (val <= currentBid) {
+        alert('Ставка должна быть больше текущей');
+        return;
+      }
+
+      currentBid = val;
+      activeCard.dataset.bid = String(currentBid);
+      rate.textContent = 'Ставка: ' + currentBid.toLocaleString('ru-RU') + ' сом';
+      bidInput.value = '';
+      alert('Ставка принята (демо)');
+    });
+
+    setActive(activeCard);
+  })();
+</script>
+</html>

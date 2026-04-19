@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авто Рынок</title>
+    <meta name="description" content="Авто-рынок: объявления о продаже автомобилей, запчастей и автосервисах. Найдите лучшие предложения у нас.">
+    <meta property="og:title" content="Авто Рынок — объявления" />
+    <meta property="og:description" content="Объявления о продаже автомобилей, запчастей и услуг. Удобный поиск и выгодные цены." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">azat.kg</div>
+        <div class="header-search" role="search">
+            <input id="site-search" class="search-input" type="search" placeholder="Поиск по сайту…" autocomplete="off" aria-label="Поиск по сайту">
+            <div id="search-results" class="search-results" aria-live="polite"></div>
+        </div>
+        <a class="add-btn" href="add-listing.html">Подать объявление</a>
+    </header>
+
+    <div class="page-layout">
+        <aside class="sidebar-col left-col">
+            <div class="side-ad left-ad static-ad">
+                <a href="#"><img class="ad-img" src="https://i.pinimg.com/control1/1200x/68/96/10/68961057f65cbfce5c0f3a1fdbe3ced1.jpg" alt="Рекламный баннер" loading="lazy"></a>
+            </div>
+            <div class="side-ad left-ad static-ad">
+                <a href="#"><img class="ad-img" src="https://i.pinimg.com/control1/736x/52/52/a2/5252a2247f6f5c7a08a3731cd18ab153.jpg" alt="Рекламный баннер" loading="lazy"></a>
+            </div>
+        </aside>
+
+        <main class="main-wrapper">
+
+            <div class="top-panel">
+
+                <div>
+                    <div class="category-grid category-grid-hero">
+                        <a href="categories/cars.html" class="category-item category-item-photo category-item-cars"><span>Легковые</span></a>
+
+                        <a href="categories/parts.html" class="category-item category-item-photo category-item-parts"><span>Запчасти</span></a>
+
+                        <a href="categories/services.html" class="category-item category-item-photo category-item-services"><span>Услуги</span></a>
+
+                        <a href="categories/business.html" class="category-item category-item-photo category-item-business"><span>Автобизнес</span></a>
+
+                        <a href="categories/commercial.html" class="category-item category-item-photo category-item-commercial"><span>Коммерческие</span></a>
+
+                        <a href="categories/special.html" class="category-item category-item-photo category-item-special"><span>Спецтехника</span></a>
+
+                        <a href="categories/moto.html" class="category-item category-item-photo category-item-moto"><span>Мототранспорт</span></a>
+
+                        <a href="categories/auction.html" class="category-item category-item-photo category-item-auction"><span>Аукцион</span></a>
+
+                        <a href="categories/auction-numbers.html" class="category-item category-item-photo category-item-large category-item-auction-numbers"><span>Аукцион номеров</span></a>
+                    </div>
+
+                    <section class="featured-section">
+                        <h2>Услуги автобизнесов</h2>
+                        <div class="category-grid category-grid-hero">
+                            <a href="orders/order-engine-repair.html" class="category-item category-item-photo category-item-engine"><span>Ремонт двигателя</span></a>
+
+                            <a href="orders/order-detailing.html" class="category-item category-item-photo category-item-detailing"><span>Детейлинг</span></a>
+
+                            <a href="categories/business.html" class="category-item category-item-photo category-item-wash"><span>Мойки и сервисы</span></a>
+
+                            <a href="create-business.html" class="category-item category-item-photo category-item-createbiz"><span>Создать компанию</span></a>
+                        </div>
+                    </section>
+
+                    <section class="featured-section">
+                        <h2>Мототранспорт</h2>
+                        <div class="category-grid category-grid-hero">
+                            <a href="orders/order-honda-cbr650r.html" class="category-item category-item-photo category-item-moto1"><span>Honda CBR</span></a>
+
+                            <a href="orders/order-yamaha-mt07.html" class="category-item category-item-photo category-item-moto2"><span>Yamaha R</span></a>
+
+                            <a href="orders/order-kawasaki-ninja-400.html" class="category-item category-item-photo category-item-moto3"><span>Kawasaki Ninja</span></a>
+
+                            <a href="orders/order-suzuki-gsx.html" class="category-item category-item-photo category-item-moto4"><span>Suzuki GSX</span></a>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Featured cars -->
+                <section class="featured-section">
+                    <h2>Рекомендуемые автомобили</h2>
+                    <div class="featured-grid">
+                        <a class="featured-card feat-link" href="details/hyundai-sonata.html">
+                            <div class="feat-image"><img src="https://storage.yandexcloud.net/cdn.carso.ru/uploads/new_car/1881/colors/2.png" alt="Hyundai Sonata" loading="lazy"></div>
+                            <div class="feat-body"><div class="feat-title">Hyundai Sonata</div><div class="feat-price">1 000 000 сом</div></div>
+                        </a>
+
+                        <a class="featured-card feat-link" href="details/zeekr-x.html">
+                            <div class="feat-image"><img src="https://storage.yandexcloud.net/cdn.carso.ru/uploads/new_car/3024/colors/HqaeseBR.png" alt="Zeekr X" loading="lazy"></div>
+                            <div class="feat-body"><div class="feat-title">Zeekr X</div><div class="feat-price">1 472 000 сом</div></div>
+                        </a>
+
+                        <a class="featured-card feat-link" href="details/toyota-camry.html">
+                            <div class="feat-image"><img src="https://storage.yandexcloud.net/cdn.carso.ru/uploads/new_car/334/colors/day_exterior_4_1f7.png" alt="Toyota Camry" loading="lazy"></div>
+                            <div class="feat-body"><div class="feat-title">Toyota Camry 75</div><div class="feat-price">1 566 000 сом</div></div>
+                        </a>
+
+                        <a class="featured-card feat-link" href="details/bmw-m5.html">
+                            <div class="feat-image"><img src="https://avatars.mds.yandex.net/get-autoru-vos/1729789/0ca827070183ba7bf7bcf593cc8fde56/1200x900" alt="BMW M5" loading="lazy"></div>
+                            <div class="feat-body"><div class="feat-title">BMW M5 F90</div><div class="feat-price">5 000 000 сом</div></div>
+                        </a>
+
+                        <a class="featured-card feat-link" href="details/nissan-xtrail.html">
+                            <div class="feat-image"><img src="https://avatars.mds.yandex.net/get-autoru-vos/4303191/5960e0d58c3069bae31034fe577528cb/1200x900" alt="Nissan X-Trail" loading="lazy"></div>
+                            <div class="feat-body"><div class="feat-title">Nissan X-Trail</div><div class="feat-price">1 200 000 сом</div></div>
+                        </a>
+                    </div>
+                </section>
+            </div>
+
+        </main>
+
+        <aside class="sidebar-col right-col">
+            <div class="side-ad right-ad static-ad">
+                <a href="#"><img class="ad-img" src="https://i.pinimg.com/control1/1200x/10/92/89/1092892e8f2a9807b5500a1766a3fc53.jpg" alt="Рекламный баннер" loading="lazy"></a>
+            </div>
+            <div class="side-ad right-ad static-ad">
+                <a href="#"><img class="ad-img" src="https://i.pinimg.com/736x/a4/53/f5/a453f5d85806a094d2e04edd25479bd3.jpg" alt="Рекламный баннер" loading="lazy"></a>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="site-footer">
+        &copy; 2026 Авто Рынок — все права защищены. <a href="contacty.html">Контакты</a> · <a href="rules.html">Правила</a>
+    </footer>
+
+<script>
+    (function () {
+        const input = document.getElementById('site-search');
+        const resultsEl = document.getElementById('search-results');
+
+        const data = [
+            { title: 'Легковые', url: 'categories/cars.html' },
+            { title: 'Запчасти', url: 'categories/parts.html' },
+            { title: 'Услуги', url: 'categories/services.html' },
+            { title: 'Автобизнес', url: 'categories/business.html' },
+            { title: 'Коммерческие', url: 'categories/commercial.html' },
+            { title: 'Спецтехника', url: 'categories/special.html' },
+            { title: 'Мототранспорт', url: 'categories/moto.html' },
+            { title: 'Аукцион', url: 'categories/auction.html' },
+            { title: 'Аукцион номеров', url: 'categories/auction-numbers.html' },
+
+            { title: 'Hyundai Sonata', url: 'details/hyundai-sonata.html' },
+            { title: 'Zeekr X', url: 'details/zeekr-x.html' },
+            { title: 'Toyota Camry 75', url: 'details/toyota-camry.html' },
+            { title: 'BMW M5 F90', url: 'details/bmw-m5.html' },
+            { title: 'Nissan X-Trail', url: 'details/nissan-xtrail.html' },
+
+            { title: 'Заказ: Hyundai Sonata', url: 'orders/orderhyundaisonata.html' },
+            { title: 'Заказ: Zeekr X', url: 'orders/orderzeekrx.html' },
+            { title: 'Заказ: Toyota Camry 75', url: 'orders/ordertoyotacamry.html' },
+            { title: 'Заказ: BMW M5 F90', url: 'orders/orderbmwm5f90.html' },
+            { title: 'Заказ: Nissan X-Trail', url: 'orders/ordernissanxtrail.html' },
+
+            { title: 'Ford Transit', url: 'categories/commercial.html' },
+            { title: 'Mercedes-Benz Sprinter', url: 'categories/commercial.html' },
+            { title: 'Volkswagen Crafter', url: 'categories/commercial.html' },
+            { title: 'Isuzu N-Series', url: 'categories/commercial.html' },
+            { title: 'ГАЗель Next', url: 'categories/commercial.html' },
+            { title: 'Toyota HiAce', url: 'categories/commercial.html' },
+
+            { title: 'Капитальный ремонт двигателя', url: 'categories/services.html' },
+            { title: 'Полировка и химчистка', url: 'categories/services.html' },
+            { title: 'Турбина на BMW M5 F90', url: 'categories/parts.html' },
+            { title: 'Диски R19 Mercedes CLS', url: 'categories/parts.html' },
+            { title: 'Фара левая Hyundai Sonata', url: 'categories/parts.html' }
+        ];
+
+        function escapeHtml(str) {
+            return str
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/\"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        function closeResults() {
+            resultsEl.innerHTML = '';
+            resultsEl.classList.remove('is-open');
+        }
+
+        function renderResults(items) {
+            if (!items.length) {
+                resultsEl.innerHTML = '<div class="search-empty">Ничего не найдено</div>';
+                resultsEl.classList.add('is-open');
+                return;
+            }
+
+            resultsEl.innerHTML = items
+                .map((x) => `<a class="search-item" href="${x.url}">${escapeHtml(x.title)}</a>`)
+                .join('');
+            resultsEl.classList.add('is-open');
+        }
+
+        input.addEventListener('input', function () {
+            const q = input.value.trim().toLowerCase();
+            if (q.length < 2) {
+                closeResults();
+                return;
+            }
+
+            const matches = data
+                .filter((x) => x.title.toLowerCase().includes(q))
+                .slice(0, 10);
+
+            renderResults(matches);
+        });
+
+        input.addEventListener('focus', function () {
+            const q = input.value.trim().toLowerCase();
+            if (q.length >= 2) {
+                const matches = data
+                    .filter((x) => x.title.toLowerCase().includes(q))
+                    .slice(0, 10);
+                renderResults(matches);
+            }
+        });
+
+        document.addEventListener('click', function (e) {
+            const target = e.target;
+            if (!(target instanceof Element)) return;
+            if (target.closest('.header-search')) return;
+            closeResults();
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closeResults();
+                input.blur();
+            }
+        });
+    })();
+</script>
+
+</body>
+</html>

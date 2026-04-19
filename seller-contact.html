@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты продавца — Azat.kg</title>
+    <meta name="description" content="Связь с продавцом: телефон и мессенджеры.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="cars-page page-with-footer">
+
+    <header class="header">
+        <a href="javascript:history.back()" class="back-link">← Назад</a>
+        <div class="logo">Контакты</div>
+        <div></div>
+    </header>
+
+    <div class="page-layout">
+        <aside class="sidebar-col left-col">
+            <div class="side-ad left-ad static-ad">
+                <a href="#"><img class="ad-img" src="https://i.pinimg.com/control1/1200x/68/96/10/68961057f65cbfce5c0f3a1fdbe3ced1.jpg" alt="Рекламный баннер" loading="lazy"></a>
+            </div>
+            <div class="side-ad left-ad static-ad">
+                <a href="#"><img class="ad-img" src="https://i.pinimg.com/control1/736x/52/52/a2/5252a2247f6f5c7a08a3731cd18ab153.jpg" alt="Рекламный баннер" loading="lazy"></a>
+            </div>
+        </aside>
+
+        <main class="main-wrapper">
+            <section class="page-intro">
+                <div>
+                    <h1>Номер продавца</h1>
+                    <p>Нажмите, чтобы позвонить или написать продавцу.</p>
+                </div>
+                <div class="page-meta">
+                    <span class="car-count" id="contact-item">Контакт</span>
+                    <span class="page-note">Демо-страница</span>
+                </div>
+            </section>
+
+            <div class="car-card" style="max-width:820px;margin:0 auto;">
+                <div class="car-info">
+                    <h2 class="car-name" style="margin-top:0">Телефон</h2>
+                    <p class="car-price" style="font-size:28px;margin:8px 0 14px">
+                        <a id="seller-phone" href="tel:+996700000000" style="color:#111;text-decoration:none">+996 700 000 000</a>
+                    </p>
+
+                    <div class="car-actions" style="display:flex;gap:12px;flex-wrap:wrap">
+                        <a id="call-btn" href="tel:+996700000000" class="buy-now-btn">Позвонить</a>
+                        <a id="wa-btn" href="https://wa.me/996700000000" class="buy-now-btn" target="_blank" rel="noopener">WhatsApp</a>
+                        <a id="tg-btn" href="https://t.me/+996700000000" class="buy-now-btn" target="_blank" rel="noopener">Telegram</a>
+                        <button id="copy-btn" class="buy-now-btn" type="button">Скопировать</button>
+                    </div>
+
+                    <p style="margin-top:16px;color:#555">Если номер не отвечает, напишите в мессенджер — обычно там отвечают быстрее.</p>
+                </div>
+            </div>
+        </main>
+
+        <aside class="sidebar-col right-col">
+            <div class="side-ad right-ad static-ad">
+                <a href="#"><img class="ad-img" src="https://i.pinimg.com/control1/1200x/10/92/89/1092892e8f2a9807b5500a1766a3fc53.jpg" alt="Рекламный баннер" loading="lazy"></a>
+            </div>
+            <div class="side-ad right-ad static-ad">
+                <a href="#"><img class="ad-img" src="https://i.pinimg.com/736x/a4/53/f5/a453f5d85806a094d2e04edd25479bd3.jpg" alt="Рекламный баннер" loading="lazy"></a>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="site-footer">
+        © 2026 Azat.kg — все права защищены. <a href="#">Контакты</a> · <a href="#">Правила</a>
+    </footer>
+
+    <script>
+        (function () {
+            const params = new URLSearchParams(window.location.search);
+            const phoneRaw = params.get('phone') || '+996700000000';
+            const item = params.get('item') || '';
+
+            const phoneDigits = phoneRaw.replace(/[^\d]/g, '');
+            const telHref = 'tel:' + (phoneRaw.startsWith('+') ? phoneRaw : '+' + phoneDigits);
+
+            const phoneEl = document.getElementById('seller-phone');
+            const callBtn = document.getElementById('call-btn');
+            const waBtn = document.getElementById('wa-btn');
+            const tgBtn = document.getElementById('tg-btn');
+            const copyBtn = document.getElementById('copy-btn');
+            const itemEl = document.getElementById('contact-item');
+
+            if (itemEl && item) itemEl.textContent = item;
+
+            phoneEl.textContent = phoneRaw.replace(/(\+\d{3})(\d{3})(\d{3})(\d{3,})/, '$1 $2 $3 $4');
+            phoneEl.href = telHref;
+            callBtn.href = telHref;
+
+            if (phoneDigits) {
+                waBtn.href = 'https://wa.me/' + phoneDigits;
+                tgBtn.href = 'https://t.me/+' + phoneDigits;
+            }
+
+            copyBtn.addEventListener('click', async function () {
+                try {
+                    await navigator.clipboard.writeText(phoneRaw);
+                    copyBtn.textContent = 'Скопировано';
+                    setTimeout(function () { copyBtn.textContent = 'Скопировать'; }, 1200);
+                } catch (e) {
+                    alert('Не удалось скопировать');
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

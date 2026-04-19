@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подать объявление — Azat.kg</title>
+    <meta name="description" content="Подача объявления: автомобиль, запчасти, услуги и коммерческий транспорт.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="cars-page">
+
+    <header class="header">
+        <a href="index.html" class="back-link">← Назад</a>
+        <div class="logo">Подать объявление</div>
+        <div></div>
+    </header>
+
+    <div class="page-layout">
+        <aside class="sidebar-col left-col">
+            <div class="side-ad left-ad static-ad">
+                <a href="#"><img class="ad-img" src="https://i.pinimg.com/control1/1200x/68/96/10/68961057f65cbfce5c0f3a1fdbe3ced1.jpg" alt="Рекламный баннер" loading="lazy"></a>
+            </div>
+            <div class="side-ad left-ad static-ad">
+                <a href="#"><img class="ad-img" src="https://i.pinimg.com/control1/736x/52/52/a2/5252a2247f6f5c7a08a3731cd18ab153.jpg" alt="Рекламный баннер" loading="lazy"></a>
+            </div>
+        </aside>
+
+        <main class="main-wrapper">
+            <section class="page-intro">
+                <div>
+                    <h1>Подача объявления</h1>
+                    <p>Заполни форму — и объявление будет готово для публикации. (Пока без отправки на сервер.)</p>
+                </div>
+                <div class="page-meta">
+                    <span class="car-count">Форма</span>
+                    <span class="page-note">1–2 минуты</span>
+                </div>
+            </section>
+
+            <div class="car-card">
+                <div class="car-info">
+                    <form id="add-listing-form">
+                        <div class="car-specs">
+                            <div class="spec">
+                                <span class="spec-label">Категория:</span>
+                                <select id="category" name="category" style="width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.12)">
+                                    <option value="cars">Легковые</option>
+                                    <option value="commercial">Коммерческие</option>
+                                    <option value="special">Спецтехника</option>
+                                    <option value="moto">Мототранспорт</option>
+                                    <option value="parts">Запчасти</option>
+                                    <option value="services">Услуги</option>
+                                    <option value="business">Автобизнес</option>
+                                </select>
+                            </div>
+
+                            <div class="spec">
+                                <span class="spec-label">Цена (сом):</span>
+                                <input id="price" name="price" type="number" min="0" placeholder="Например: 1200000" style="width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.12)">
+                            </div>
+
+                            <div class="spec" style="grid-column:1 / -1">
+                                <span class="spec-label">Заголовок:</span>
+                                <input id="title" name="title" type="text" required placeholder="Например: Toyota Camry 75, 2021" style="width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.12)">
+                            </div>
+
+                            <div class="spec" style="grid-column:1 / -1">
+                                <span class="spec-label">Описание:</span>
+                                <textarea id="description" name="description" rows="5" required placeholder="Опиши состояние, пробег, комплектацию, что входит…" style="width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.12);resize:vertical"></textarea>
+                            </div>
+
+                            <div class="spec">
+                                <span class="spec-label">Телефон:</span>
+                                <input id="phone" name="phone" type="tel" required placeholder="Например: +996 700 000 000" style="width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.12)">
+                            </div>
+
+                            <div class="spec">
+                                <span class="spec-label">Фото (URL):</span>
+                                <input id="photo" name="photo" type="url" placeholder="https://..." style="width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.12)">
+                            </div>
+                        </div>
+
+                        <div class="car-actions" style="display:flex;gap:10px;flex-wrap:wrap">
+                            <button type="submit" class="buy-now-btn" style="background:#c8102e">Сохранить</button>
+                            <a href="index.html" class="buy-now-btn" style="background:#111">Отмена</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <aside class="sidebar-col right-col">
+            <div class="side-ad right-ad static-ad">
+                <a href="#"><img class="ad-img" src="https://i.pinimg.com/control1/1200x/10/92/89/1092892e8f2a9807b5500a1766a3fc53.jpg" alt="Рекламный баннер" loading="lazy"></a>
+            </div>
+            <div class="side-ad right-ad static-ad">
+                <a href="#"><img class="ad-img" src="https://i.pinimg.com/736x/a4/53/f5/a453f5d85806a094d2e04edd25479bd3.jpg" alt="Рекламный баннер" loading="lazy"></a>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="site-footer">
+        © 2026 Azat.kg — все права защищены. <a href="#">Контакты</a> · <a href="#">Правила</a>
+    </footer>
+
+    <script>
+        (function () {
+            const form = document.getElementById('add-listing-form');
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const title = document.getElementById('title').value.trim();
+                const category = document.getElementById('category').value;
+                const price = document.getElementById('price').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+
+                const msg =
+                    'Объявление сохранено (демо).\n\n' +
+                    'Заголовок: ' + title + '\n' +
+                    'Категория: ' + category + '\n' +
+                    'Цена: ' + (price ? price + ' сом' : 'не указана') + '\n' +
+                    'Телефон: ' + phone;
+
+                alert(msg);
+                form.reset();
+            });
+        })();
+    </script>
+
+</body>
+</html>

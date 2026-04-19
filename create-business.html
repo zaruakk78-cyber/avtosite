@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создать компанию — Azat.kg</title>
+    <meta name="description" content="Создание компании в разделе Автобизнес: сервис, мойка, магазин и т.д.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="cars-page page-with-footer">
+
+    <header class="header">
+        <a href="categories/business.html" class="back-link">← Назад</a>
+        <div class="logo">Создать компанию</div>
+        <div></div>
+    </header>
+
+    <div class="page-layout">
+        <aside class="sidebar-col left-col">
+            <div class="side-ad left-ad static-ad">
+                <a href="#"><img class="ad-img" src="https://i.pinimg.com/control1/1200x/68/96/10/68961057f65cbfce5c0f3a1fdbe3ced1.jpg" alt="Рекламный баннер" loading="lazy"></a>
+            </div>
+            <div class="side-ad left-ad static-ad">
+                <a href="#"><img class="ad-img" src="https://i.pinimg.com/control1/736x/52/52/a2/5252a2247f6f5c7a08a3731cd18ab153.jpg" alt="Рекламный баннер" loading="lazy"></a>
+            </div>
+        </aside>
+
+        <main class="main-wrapper">
+            <section class="page-intro">
+                <div>
+                    <h1>Создать свою компанию</h1>
+                    <p>Заполните данные — после отправки заявка будет отправлена на модерацию (демо).</p>
+                </div>
+                <div class="page-meta">
+                    <span class="car-count">Форма</span>
+                    <span class="page-note">Без регистрации</span>
+                </div>
+            </section>
+
+            <form class="listing-form" id="create-business-form">
+                <div class="form-grid">
+                    <label class="form-field">
+                        <span class="field-label">Название компании</span>
+                        <input type="text" name="title" required placeholder="Например: AutoFix Service">
+                    </label>
+
+                    <label class="form-field">
+                        <span class="field-label">Категория</span>
+                        <select name="category" required>
+                            <option value="">Выберите</option>
+                            <option value="service">Автосервис</option>
+                            <option value="wash">Автомойка</option>
+                            <option value="detailing">Детейлинг</option>
+                            <option value="shop">Магазин</option>
+                            <option value="dealer">Автосалон</option>
+                        </select>
+                    </label>
+
+                    <label class="form-field">
+                        <span class="field-label">Город / район</span>
+                        <input type="text" name="location" required placeholder="Бишкек, Центр">
+                    </label>
+
+                    <label class="form-field">
+                        <span class="field-label">Телефон</span>
+                        <input type="tel" name="phone" required placeholder="+996 700 000 000">
+                    </label>
+
+                    <label class="form-field" style="grid-column: 1 / -1;">
+                        <span class="field-label">Описание</span>
+                        <textarea name="description" rows="5" required placeholder="Что вы делаете, график работы, цены..."></textarea>
+                    </label>
+
+                    <label class="form-field" style="grid-column: 1 / -1;">
+                        <span class="field-label">Ссылка на логотип (URL)</span>
+                        <input type="url" name="logo" placeholder="https://...">
+                    </label>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">Отправить</button>
+                    <a href="categories/business.html" class="cancel-link">Отмена</a>
+                </div>
+            </form>
+        </main>
+
+        <aside class="sidebar-col right-col">
+            <div class="side-ad right-ad static-ad">
+                <a href="#"><img class="ad-img" src="https://i.pinimg.com/control1/1200x/10/92/89/1092892e8f2a9807b5500a1766a3fc53.jpg" alt="Рекламный баннер" loading="lazy"></a>
+            </div>
+            <div class="side-ad right-ad static-ad">
+                <a href="#"><img class="ad-img" src="https://i.pinimg.com/736x/a4/53/f5/a453f5d85806a094d2e04edd25479bd3.jpg" alt="Рекламный баннер" loading="lazy"></a>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="site-footer">
+        © 2026 Azat.kg — все права защищены. <a href="#">Контакты</a> · <a href="#">Правила</a>
+    </footer>
+
+    <script>
+        (function () {
+            const form = document.getElementById('create-business-form');
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                alert('Заявка отправлена (демо). Мы свяжемся с вами по телефону.');
+                form.reset();
+            });
+        })();
+    </script>
+</body>
+</html>

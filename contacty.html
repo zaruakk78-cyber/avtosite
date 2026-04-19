@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Контакты — Авто Рынок</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .contact-page{padding:12px 0 24px}
+
+    .contact-hero{
+      position:relative;
+      overflow:hidden;
+      border-radius:26px;
+      padding:26px;
+      border:1px solid rgba(200,16,46,0.14);
+      background:
+        radial-gradient(circle at 20% 10%, rgba(200,16,46,0.22), transparent 40%),
+        radial-gradient(circle at 90% 30%, rgba(248,168,26,0.18), transparent 46%),
+        linear-gradient(135deg, rgba(200,16,46,0.12), rgba(255,255,255,0.92));
+      box-shadow:0 20px 60px rgba(2,6,23,0.10);
+    }
+    .contact-hero h1{margin:0 0 8px 0;font-size:30px;color:#111;letter-spacing:0.2px}
+    .contact-hero p{margin:0;color:#4f4f4f;line-height:1.65;max-width:760px}
+
+    .contact-badges{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px}
+    .contact-badge{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 12px;border-radius:999px;
+      background:rgba(255,255,255,0.78);
+      border:1px solid rgba(0,0,0,0.08);
+      font-size:13px;font-weight:700;color:#111
+    }
+    .contact-badge svg{width:16px;height:16px;flex:0 0 auto}
+
+    .contact-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:18px;margin-top:18px}
+    .contact-card{
+      background:#fff;
+      border:1px solid rgba(0,0,0,0.08);
+      border-radius:22px;
+      padding:18px 18px;
+      box-shadow:0 14px 40px rgba(2,6,23,0.08)
+    }
+    .contact-card h2{margin:0 0 12px 0;font-size:18px;color:#111}
+
+    .contact-items{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .contact-item{
+      display:flex;gap:12px;align-items:flex-start;
+      padding:14px;border-radius:18px;
+      background:linear-gradient(180deg, rgba(200,16,46,0.06), rgba(255,255,255,0.0));
+      border:1px solid rgba(200,16,46,0.10)
+    }
+    .contact-ico{
+      width:40px;height:40px;border-radius:14px;
+      display:flex;align-items:center;justify-content:center;
+      background:rgba(200,16,46,0.10);
+      border:1px solid rgba(200,16,46,0.18)
+    }
+    .contact-ico svg{width:20px;height:20px}
+    .contact-item-title{margin:0;color:#111;font-weight:800;font-size:14px;line-height:1.2}
+    .contact-item-text{margin:6px 0 0 0;color:#555;font-size:13px;line-height:1.45}
+    .contact-item a{text-decoration:none;color:#c8102e;font-weight:800}
+
+    .mini-list{display:grid;gap:10px}
+    .mini-row{
+      display:flex;justify-content:space-between;gap:12px;
+      padding:12px 14px;border-radius:16px;
+      background:rgba(2,6,23,0.03);
+      border:1px solid rgba(0,0,0,0.06)
+    }
+    .mini-row b{color:#111}
+
+    .map-link{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:14px 14px;border-radius:18px;
+      border:1px dashed rgba(200,16,46,0.38);
+      background:rgba(200,16,46,0.06);
+      text-decoration:none;color:#111;font-weight:900
+    }
+    .map-link span{color:#c8102e}
+
+    .contact-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .contact-form .field{display:flex;flex-direction:column;gap:8px}
+    .contact-form label{font-size:13px;font-weight:800;color:#111}
+    .contact-form input,.contact-form textarea{
+      border-radius:14px;border:1px solid rgba(0,0,0,0.14);
+      padding:12px 12px;font-size:14px;outline:none;background:#fff;color:#111
+    }
+    .contact-form textarea{min-height:110px;resize:vertical;grid-column:1/-1}
+    .contact-form input:focus,.contact-form textarea:focus{
+      box-shadow:0 0 0 3px rgba(200,16,46,0.14);
+      border-color:rgba(200,16,46,0.45)
+    }
+    .contact-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:14px}
+    .contact-submit{
+      background:#c8102e;color:#fff;border:none;border-radius:999px;
+      padding:12px 18px;font-weight:900;cursor:pointer
+    }
+    .contact-submit:hover{filter:brightness(1.03)}
+    .contact-note{font-size:12px;color:#666;margin:0}
+
+    @media (max-width:900px){
+      .contact-grid{grid-template-columns:1fr}
+    }
+    @media (max-width:600px){
+      .contact-hero{padding:18px;border-radius:22px}
+      .contact-hero h1{font-size:24px}
+      .contact-items{grid-template-columns:1fr}
+      .contact-form{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="index.html" style="text-decoration:none">Авто Рынок</a>
+    <div class="header-search" style="max-width:520px">
+      <input class="search-input" type="text" placeholder="Поиск по сайту" disabled />
+    </div>
+    <a class="add-btn" href="add-listing.html">Подать</a>
+  </header>
+
+  <div class="page-layout">
+    <div class="main-wrapper contact-page">
+      <section class="contact-hero">
+        <h1>Контакты</h1>
+        <p>Мы отвечаем быстро и по делу. Выберите удобный способ связи или оставьте сообщение — мы свяжемся с вами.</p>
+
+        <div class="contact-badges">
+          <div class="contact-badge">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22a10 10 0 1 0-10-10 10 10 0 0 0 10 10Z" stroke="#c8102e" stroke-width="2"/><path d="M12 6v6l4 2" stroke="#c8102e" stroke-width="2" stroke-linecap="round"/></svg>
+            Поддержка ежедневно
+          </div>
+          <div class="contact-badge">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 12a8 8 0 1 1-8-8" stroke="#c8102e" stroke-width="2" stroke-linecap="round"/><path d="M20 4v6h-6" stroke="#c8102e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Ответ в течение дня
+          </div>
+          <div class="contact-badge">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11Z" stroke="#c8102e" stroke-width="2"/><path d="M12 13a2 2 0 1 0-2-2 2 2 0 0 0 2 2Z" stroke="#c8102e" stroke-width="2"/></svg>
+            Бишкек / Кыргызстан
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-grid">
+        <div class="contact-card">
+          <h2>Связь</h2>
+
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-ico">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92V20a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3 5.18 2 2 0 0 1 5 3h3.09a2 2 0 0 1 2 1.72c.13.96.35 1.9.65 2.8a2 2 0 0 1-.45 2.11L9 11a16 16 0 0 0 4 4l1.37-1.29a2 2 0 0 1 2.11-.45c.9.3 1.84.52 2.8.65A2 2 0 0 1 22 16.92Z" stroke="#c8102e" stroke-width="2" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <p class="contact-item-title">Телефон</p>
+                <p class="contact-item-text">
+                  <a href="tel:+996505090116">+996 505 09 01 16</a><br/>
+                  Звонки и сообщения
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-ico">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z" stroke="#c8102e" stroke-width="2" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <p class="contact-item-title">WhatsApp</p>
+                <p class="contact-item-text">
+                  <a href="https://wa.me/996505090116" target="_blank" rel="noopener">Написать в WhatsApp</a><br/>
+                  Самый быстрый способ
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-ico">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 3 11 14" stroke="#c8102e" stroke-width="2" stroke-linecap="round"/><path d="M22 3 15 21l-4-7-7-4 18-7Z" stroke="#c8102e" stroke-width="2" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <p class="contact-item-title">Telegram</p>
+                <p class="contact-item-text">
+                  <a href="https://t.me/" target="_blank" rel="noopener">Открыть Telegram</a><br/>
+                  Можно отправить фото/видео
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-ico">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16v16H4V4Z" stroke="#c8102e" stroke-width="2"/><path d="m4 7 8 6 8-6" stroke="#c8102e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <p class="contact-item-title">Почта</p>
+                <p class="contact-item-text">
+                  <a href="zaruakk78@gmail.com">zaruakk78@gmail.com</a><br/>
+                  Для предложений и партнёрства
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:14px">
+            <a class="map-link" href="https://maps.app.goo.gl/JbFFMsaugTygngx36" target="_blank" rel="noopener">
+              <div>Открыть карту и построить маршрут</div>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <h2>График и сообщение</h2>
+
+          <div class="mini-list">
+            <div class="mini-row"><b>Пн–Пт</b><span>09:00 — 20:00</span></div>
+            <div class="mini-row"><b>Сб</b><span>10:00 — 18:00</span></div>
+            <div class="mini-row"><b>Вс</b><span>Свободный график</span></div>
+          </div>
+
+          <form style="margin-top:14px" onsubmit="event.preventDefault(); alert('Сообщение отправлено! Мы скоро свяжемся.');">
+            <div class="contact-form">
+              <div class="field">
+                <label for="c_name">Имя</label>
+                <input id="c_name" name="name" type="text" placeholder="Как к вам обращаться" required />
+              </div>
+
+              <div class="field">
+                <label for="c_phone">Телефон</label>
+                <input id="c_phone" name="phone" type="tel" placeholder="+7 ..." required />
+              </div>
+
+              <div class="field" style="grid-column:1/-1">
+                <label for="c_msg">Сообщение</label>
+                <textarea id="c_msg" name="message" placeholder="Опишите вопрос коротко" required></textarea>
+              </div>
+            </div>
+
+            <div class="contact-actions">
+              <button class="contact-submit" type="submit">Отправить</button>
+              <p class="contact-note">Не указывайте пароли и личные данные карт.</p>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <footer class="site-footer" style="margin-top:18px">
+        &​copy; 2026 Авто Рынок — все права защищены. <a href="contacty.html">Контакты</a> · <a href="rules.html">Правила</a>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
