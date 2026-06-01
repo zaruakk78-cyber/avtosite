@@ -26,6 +26,7 @@ img{max-width:100%;display:block}
 .listing-form{background:#fff;border-radius:18px;box-shadow:0 18px 42px rgba(0,0,0,0.12);padding:18px;border:1px solid rgba(0,0,0,0.06)}
 .form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .form-field{display:flex;flex-direction:column;gap:8px}
+
 .field-label{font-weight:700;font-size:13px;color:#111}
 .listing-form input,.listing-form select,.listing-form textarea{width:100%;border-radius:12px;border:1px solid rgba(0,0,0,0.14);padding:10px 12px;font-size:14px;outline:none;background:#fff;color:#111}
 .listing-form textarea{resize:vertical;min-height:120px}
